@@ -5,7 +5,7 @@
     <insert id="insertBatch">
         insert into dish_flavor(dish_id, name, value) values
         <foreach collection="flavors" item="df" separator=",">
-            (#(df.dishId),#(df.name),#(df.value))
+            (#{df.dishId},#{df.name},#{df.value})
         </foreach>
     </insert>
     <delete id="deleteByDishIds">
